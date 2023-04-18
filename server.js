@@ -1,6 +1,5 @@
 const express = require('express');
 const routes = require('./routes/packages'); 
-const { supabase } = require('./config/SupabaseClient');
 
 const app = express();
 
