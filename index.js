@@ -27,9 +27,6 @@ const schedulerCallback = async () => {
         })
         .eq("id", ele?.id)
         .select();
-    } else {
-        console.log(newCurrentVersion, ele?.current_version)
-        console.log("no update for this module")
     }
   });
 };
@@ -47,6 +44,6 @@ app.use((req, res, next) => {
 
 app.use("/", routes);
 
-const job = schedule.scheduleJob('30 * * * * *', schedulerCallback);
+const job = schedule.scheduleJob('59 23 * * *', schedulerCallback);
 
 app.listen(8000, () => console.log("listening at 8000"));
