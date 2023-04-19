@@ -13,7 +13,7 @@ const searchPackage = async (req, res, next) => {
       version: commonData?.version,
     };
   });
-  res.json({ message: newData });
+  res.json({ packages: newData });
 };
 
 module.exports = searchPackage;

@@ -3,7 +3,8 @@ const { supabase } = require('../../config/SupabaseClient');
 const getAllPackages = async (req, res, next) => {
   const { data, error } = await supabase.from('npm-modules').select();
   const packageData = data.map((e) => ({
-    versions: e.version,
+    id: e?.id,
+    versions: e?.version,
     currentVersion: e?.current_version,
     readMe: e?.readme,
     name: e?.name,
